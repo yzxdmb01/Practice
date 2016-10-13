@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_fly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="#00ff2e2e"
+        android:text="〇" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="直线" />
+
+        <RadioButton
+            android:id="@+id/rb_parabola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抛物线" />
+
+        <RadioButton
+            android:id="@+id/rb_view_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view animation" />
+
+        <RadioButton
+            android:id="@+id/rb_lp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MarginLayoutParams" />
+
+        <RadioButton
+            android:id="@+id/rb_value_anmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ValueAnimation" />
+
+        <RadioButton
+            android:id="@+id/rb_delay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delay" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:onClick="startAnima"
+        android:text="点击" />
+
+    <TextView
+        android:id="@+id/tv_percent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="50sp" />
+
+</RelativeLayout>

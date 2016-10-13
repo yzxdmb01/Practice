@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jr.practice">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".JrApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".splash.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 通知测试 -->
+        <activity android:name=".activity.NotificationActivity" />
+        <!-- 自定义view -->
+        <activity android:name=".activity.CustomViewActivity" />
+        <!-- 键盘测试 -->
+        <activity
+            android:name=".activity.KeyboardActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 动画测试 -->
+        <activity android:name=".activity.AnimationActivity" />
+        <!-- 点击测试 -->
+        <activity android:name=".activity.PhotoWallActivity" />
+        <!-- 前台服务测试 -->
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- 按钮效果 -->
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.LocalActivity" />
+        <activity android:name=".activity.DrawableActivity" />
+
+        <receiver android:name=".widget.MyAppWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" />
+
+            <intent-filter>
+                <action android:name="CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.OtherActivity" />
+        <activity android:name=".activity.AActivity" />
+        <activity android:name=".MainActivity"></activity>
+    </application>
+
+</manifest>

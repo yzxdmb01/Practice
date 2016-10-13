@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.jr.practice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_notifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="通知测试" />
+
+        <Button
+            android:id="@+id/btn_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义view" />
+
+        <Button
+            android:id="@+id/btn_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="竖着的ViewPager" />
+
+        <Button
+            android:id="@+id/btn_anmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="动画测试" />
+
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="照片墙" />
+
+        <Button
+            android:id="@+id/btn_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="前台服务" />
+
+        <Button
+            android:id="@+id/btn_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="listview" />
+
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="位置测试" />
+
+        <Button
+            android:id="@+id/btn_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Drawable" />
+
+    </LinearLayout>
+</ScrollView>

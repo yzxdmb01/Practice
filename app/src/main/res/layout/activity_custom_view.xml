@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b509af88"
+    android:orientation="vertical"
+    tools:context="com.jr.practice.MainActivity">
+
+    <com.jr.practice.view.ClickSlideView
+        android:id="@+id/csv_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ef2424"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:gravity="center"
+            android:text="啊啊啊啊哦"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="啵啵啵啵啵"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="测测测测测"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </com.jr.practice.view.ClickSlideView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.jr.practice.view.StaggeredView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layoutAnimation="@anim/test_anim_layout">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿嘿嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿嘿嘿嘿嘿嘿嘿嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="哈嘿哈" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嘿嘿嘿嘿" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="啊" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="弟弟历来李丽丽丽丽里里" />
+            </com.jr.practice.view.StaggeredView>
+
+            <com.jr.practice.view.CircleView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:clickable="true"
+                app:m_color="@color/colorPrimary" />
+
+            <View
+                android:id="@+id/view_anim_drawable"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/test_animation" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="button" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/drawable_shape"
+                android:elevation="10dp"
+                android:stateListAnimator="@null"
+                android:translationZ="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

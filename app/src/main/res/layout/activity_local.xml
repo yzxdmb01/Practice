@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jr.practice.activity.LocalActivity">
+
+    <TextView
+        android:id="@+id/tv_shake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="abc"
+        android:textSize="20sp" />
+
+    <com.jr.practice.view.LinearLayout2
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#500056"
+        android:id="@+id/ll_root"
+        android:orientation="vertical">
+
+        <com.jr.practice.view.Button2
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="button|" />
+
+        <com.jr.practice.view.TextView2
+            android:id="@+id/tv_test"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ff8c00"
+            android:text="textview" />
+    </com.jr.practice.view.LinearLayout2>
+
+    <com.jr.practice.view.Button2
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="外面的" />
+
+    <com.jr.practice.view.TextView2
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#0cfce4"
+        android:text="外面的" />
+</LinearLayout>
