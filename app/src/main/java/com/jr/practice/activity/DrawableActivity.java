@@ -2,11 +2,13 @@ package com.jr.practice.activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,9 +19,12 @@ import com.jr.practice.utils.Cat;
 import com.jr.practice.utils.L;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -43,36 +48,45 @@ public class DrawableActivity extends BaseActivity {
         Button btnSendReq = (Button) findViewById(R.id.btn_send_req);
         TextView tvRes = (TextView) findViewById(R.id.tv_res);
 
-        btnSendReq.setOnClickListener(v -> testT(tvRes));
+        btnSendReq.setOnClickListener(v -> saveNetPic(tvRes));
+
+
+        Button btnSaveBitmap = (Button) findViewById(R.id.btn_save_bitmap);
+        btnSaveBitmap.setOnClickListener(v -> saveBitmap(v, tvRes));
     }
 
-    private void sendReq(final TextView tvRes) {
-        //异步网络请求
-        OkHttpClient client = new OkHttpClient();
-//        Request request = new Request.Builder().url(url).build();
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                runOnUiThread(() -> tvRes.setText("失败：" + e.toString()));
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                runOnUiThread(() -> {
-//                    try {
-//                        tvRes.setText("成功：" + response.body().string());
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                });
-//            }
-//        });
-        boolean permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
-        if (!permission) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+    /**
+     * 保存当前Activity的截图
+     * @param v
+     * @param tvRes
+     */
+    private void saveBitmap(View v, TextView tvRes) {
+        if (!checkPermission()) {
+            saveBitmap(v, tvRes);
             return;
         }
-        tvRes.setText("permission:" + permission);
+        getWindow().getDecorView().getRootView().buildDrawingCache();
+        Bitmap bitmap = getWindow().getDecorView().getRootView().getDrawingCache();
+        String sdcardPath = Environment.getExternalStorageDirectory().getPath();
+        String picName = sdcardPath + File.separator + "测试" + File.separator + SystemClock.elapsedRealtime() + ".jpg";
+        File file = new File(picName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+            runOnUiThread(() -> tvRes.setText(picName));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendReq(final TextView tvRes) throws NoSuchMethodException {
+        //异步网络请求
+        OkHttpClient client = new OkHttpClient();
+        checkPermission();
         String path = Environment.getExternalStorageDirectory().getPath();
         L.i(path);
 
@@ -102,7 +116,15 @@ public class DrawableActivity extends BaseActivity {
         });
     }
 
-    private void testT(TextView v) {
+    private boolean checkPermission() {
+        boolean permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        if (!permission) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+        }
+        return permission;
+    }
+
+    private void saveNetPic(TextView v) {
         BaseUtils.test(new BaseCallBack<Cat>() {
             @Override
             public void onSuccess(Cat cat) {
