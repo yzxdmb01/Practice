@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CircleView">
-        <attr name="m_color" format="color"/>
+        <attr name="m_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="FlexibleView">
+        <attr name="fvDrawable" format="reference" />
+        <attr name="fvBackgroundColor" format="color" />
+        <attr name="fvStrokeColor" format="color" />
+        <attr name="fvStrokeWidth" format="dimension" />
+        <attr name="fvText" format="string" />
+        <attr name="fvTextSize" format="dimension" />
+        <attr name="fvTextColor" format="color" />
     </declare-styleable>
 </resources>
