@@ -54,11 +54,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.jr.practice.view.FlexibleView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fvDrawable="@mipmap/ic_launcher"
-                app:fvText="呵呵航恶化" />
+            <com.jr.practice.view.PercentView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:background="#cf0000"
+                android:gravity="center"
+                android:text="93%"
+                android:textColor="#fff"
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="50dp"
