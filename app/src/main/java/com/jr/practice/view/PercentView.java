@@ -35,12 +35,12 @@ public class PercentView extends TextView {
     }
 
     private void init() {
-        setBackgroundColor(Color.TRANSPARENT);
+        setBackgroundColor(Color.TRANSPARENT);      //屏蔽掉设置的背景
         String text = getText().toString();
         text = text.replace("%", "");
         float textPercent = Float.parseFloat(text) / 100f;
         percent = textPercent;
-        setPercent(77);
+        setPercent(98);
         setText(percent * 100 + "%");
         bgPaint = new Paint();
         bgPaint.setColor(Color.parseColor("#00b31b"));
@@ -75,6 +75,8 @@ public class PercentView extends TextView {
     }
 
     public void setPercent(float percent) {
+        if (percent > 100) percent = 1;
+        if (percent < 0) percent = 0;
         if (percent > 1) percent /= 100;
         this.percent = percent;
     }

@@ -54,6 +54,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#2e020202"
+                android:gravity="center"
+                android:text="等一下" />
+
             <com.jr.practice.view.PercentView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
