@@ -65,25 +65,19 @@ public class CustomViewActivity extends BaseActivity {
         }
         sb.append(textStr.substring(startIndex));
         TextView textView = (TextView) findViewById(R.id.text_view);
-        Spanned mSpanned = Html.fromHtml(sb.toString(), new Html.ImageGetter() {
-            @Override
-            public Drawable getDrawable(String source) {
-                Bitmap bitmap = null;
-                try {
-                    bitmap = BitmapFactory.decodeStream(CustomViewActivity.this.getAssets().open("emotions/0.gif"));
-                } catch (IOException e) {
-                    L.i("???");
-                    e.printStackTrace();
-                }
-                BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
-                L.i("source:"+source+",drawable:"+bitmapDrawable);
-                bitmapDrawable.setBounds(150,150,150,150);
-                Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
-                drawable.setBounds(50,50,50,50);
-                return drawable;
+        Spanned mSpanned = Html.fromHtml(sb.toString(), source -> {
+            Bitmap bitmap = null;
+            try {
+                bitmap = BitmapFactory.decodeStream(CustomViewActivity.this.getAssets().open("emotions/"+source.replace("http://my_emotion_img/","")));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
+            bitmapDrawable.setBounds(0,0,50,50);
+            Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
+            drawable.setBounds(0,0,50,50);
+            return bitmapDrawable;
         },null);
-
         textView.setText(mSpanned);
     }
 
