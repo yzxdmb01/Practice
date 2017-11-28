@@ -25,6 +25,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 一个聊天室测试，配合sesame项目中Server类使用
  * Created by yzxdm on 2017/11/24.
  */
 
