@@ -48,6 +48,10 @@
         <activity android:name=".activity.ListViewActivity" />
         <activity android:name=".activity.LocalActivity" />
         <activity android:name=".activity.DrawableActivity" />
+        <!--聊天室-->
+        <activity
+            android:name=".activity.ChatRoomActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <receiver android:name=".widget.MyAppWidgetProvider">
             <meta-data

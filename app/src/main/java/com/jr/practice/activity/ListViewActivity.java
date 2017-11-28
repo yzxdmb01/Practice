@@ -127,7 +127,6 @@ public class ListViewActivity extends BaseActivity {
                     @Override
                     public void run() {
                         mData.remove(0);
-                        mListView.removeViewAt(0);
 //                        ((ArrayAdapter) mListView.getAdapter()).notifyDataSetChanged();
                     }
                 });

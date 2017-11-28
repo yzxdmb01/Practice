@@ -27,8 +27,11 @@ public class SplashPresenter implements SplashContract.Presenter {
 
     @Override
     public void start() {
-        splashView.showProgress("いく");
-        new Handler().postDelayed(() -> taskComplete(), 2000);
-
+        if (false) {
+            splashView.showProgress("いく");
+            new Handler().postDelayed(() -> taskComplete(), 2000);
+        } else {
+            taskComplete();
+        }
     }
 }

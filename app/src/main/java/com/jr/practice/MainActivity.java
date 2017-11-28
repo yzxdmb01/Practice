@@ -16,13 +16,14 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.jr.practice.activity.AnimationActivity;
-import com.jr.practice.activity.PhotoWallActivity;
+import com.jr.practice.activity.ChatRoomActivity;
+import com.jr.practice.activity.CustomViewActivity;
+import com.jr.practice.activity.DrawableActivity;
 import com.jr.practice.activity.KeyboardActivity;
 import com.jr.practice.activity.ListViewActivity;
 import com.jr.practice.activity.LocalActivity;
 import com.jr.practice.activity.NotificationActivity;
-import com.jr.practice.activity.CustomViewActivity;
-import com.jr.practice.activity.DrawableActivity;
+import com.jr.practice.activity.PhotoWallActivity;
 import com.jr.practice.service.MyService;
 
 import java.io.BufferedReader;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_listview).setOnClickListener(this);
         findViewById(R.id.btn_location).setOnClickListener(this);
         findViewById(R.id.btn_tablayout).setOnClickListener(this);
+        findViewById(R.id.btn_chat_room).setOnClickListener(this);
     }
 
 
@@ -174,8 +176,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_tablayout:
                 mIntent = new Intent(this, DrawableActivity.class);
                 break;
+            case R.id.btn_chat_room:
+                mIntent = new Intent(this, ChatRoomActivity.class);
+                break;
         }
-        if (mIntent != null){
+        if (mIntent != null) {
             startActivity(mIntent);
         }
 
